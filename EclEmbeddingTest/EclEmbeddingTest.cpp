@@ -1,10 +1,11 @@
 /*
 	Based on http://vwood.github.io/embedded-ecl.html
 	so, essentially, copy pasted the code and foo'ed around with 
-	project settings my ECL is installed under C:\ecl\13.5.1\
-	This folder must be in the PATH (for ecl.dll)
+	project settings until it worked.
+	My ECL is installed under C:\ecl\13.5.1\
+	This folder must be in the PATH (it needs ecl.dll)
 
-	... and fixed an error :P
+	... and fixed an error (check the function void init())
 
 */
 #include "stdafx.h"
@@ -33,13 +34,13 @@ cl_object ecl_call(char *call) {
 }
  
 void init() {
-	// For some reason, the original (char **)&"" 
-	// breaks the original example :(
-	//
-	// if you are a C++ wiz, push an explanation ;)
-	//
-	char** args = (char**) malloc(sizeof(char*) * 1);
-	args[0] = "EclEmbeddingTest";
+    // For some reason, the original (char **)&"" 
+    // breaks the original example :(
+    //
+    // if you are a C++ wiz, push an explanation ;)
+    //
+    char** args = (char**) malloc(sizeof(char*) * 1);
+    args[0] = "EclEmbeddingTest";
     cl_boot(1, args); 
  
     atexit(cl_shutdown);
