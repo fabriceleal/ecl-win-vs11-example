@@ -3,7 +3,9 @@
 Based on http://vwood.github.io/embedded-ecl.html
 so, essentially, copy pasted the code and foo'ed around with 
 project settings until it worked.
+
 My ECL is installed under C:\ecl\13.5.1\
+
 This folder must be in the PATH (it needs ecl.dll)
 
 ... and fixed an error (check the function void init())
